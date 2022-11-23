@@ -155,8 +155,8 @@ p {
 
     /* Estamos posicionando a 30px do topo e -30px da direita. */
 
-    top: 30px;
-    right: -30px;
+    top: -30px;
+    right: -70px;
 }
 
 .botao {
@@ -180,6 +180,7 @@ p {
     do grid, alinhando esse item ao centro. */
 
     align-self: center;
+    padding: 40px;
 }
 
 .vantagens {
