@@ -56,8 +56,17 @@ p, h1, h2, h3 {
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.3;
+}
+
+ul {
+
+    /* Estamos resetando o estilo padrão da lista. */
+
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 .menu {
@@ -86,11 +95,28 @@ p {
 }
 
 .menu a {
+    display: block;
     background: #FFFFFF;
-    padding: 15px 30px;
+    padding: 1rem 2rem;
     border-radius: 4px;
     color: #000000;
     text-transform: uppercase;
+
+    /* Essa borda deve estar transparente para que, ao colocarmos o
+    mouse sob esse botão, a borda não faça o botão pular, pois apenas a cor
+    do botão será alterada, ao invés de uma margem ser inserida. */
+
+    border: 2px solid transparent;
+}
+
+.menu a:hover {
+    border-color: #E21
+}
+
+.header {
+    display: grid;
+    justify-items: center;
+    gap: 60px;
 }
 
 .conteudo {
@@ -136,7 +162,37 @@ p {
     justify-items: end;
 }
 
-.detalhe {
+.introducao h1 {
+    font-size: 2rem;
+}
+
+/*.detalhe {*/
+/*    width: 60px;*/
+/*    height: 4px;*/
+/*    background: #E21;*/
+
+/*    !* Por padrão, o elemento "span" é um elemento "inline", então*/
+/*    as propriedades "width" e "height" não terão efeito sob esse*/
+/*    elemento, por isso, tivémos que definir o display desse elemento*/
+/*    para o "inline-block". *!*/
+
+/*    display: inline-block;*/
+
+/*    !* O "position: relative" permite que definamos uma posição relativa*/
+/*     para o elemento de acordo com o elemento-pai dele. *!*/
+
+/*    position: relative;*/
+
+/*    !* Estamos posicionando a 30px do topo e -30px da direita. *!*/
+
+/*    top: -30px;*/
+/*    right: -70px;*/
+/*}*/
+
+/* Estamos trocando o "span" por um pseudoelemento "before". */
+
+.introducao::before {
+
     width: 60px;
     height: 4px;
     background: #E21;
@@ -157,18 +213,26 @@ p {
 
     top: -30px;
     right: -70px;
+
+    /* Um pseudoelemento sempre deverá ter um "content" para existir. */
+
+    content: ""
 }
 
 .botao {
     background: #E21;
     color: #FFF;
-    padding: 15px 30px;
+    padding: 1rem 2rem;
     border-radius: 4px;
     text-transform: uppercase;
 }
 
+.botao:hover {
+    background: #900
+}
+
 .subtitulo {
-    font-size: 64px;
+    font-size: 4rem;
     text-transform: uppercase;
     color: rgba(0, 0, 0, 0.2);
 
@@ -181,6 +245,8 @@ p {
 
     align-self: center;
     padding: 40px;
+
+    background-image: url("../assets/onda.svg")
 }
 
 .vantagens {
@@ -211,6 +277,14 @@ p {
     gap: 10px 20px;
 
     padding: 20px;
+}
+
+.vantagens-item:hover {
+    border-left: 4px solid #e21;
+}
+
+.vantagens-item:nth-child(odd) {
+    background: #F7F7F7;
 }
 
 .vantagens-item p {
